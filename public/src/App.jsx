@@ -43,7 +43,7 @@ class App extends component {
                         }
                     }}/>
                     <Route path="/signup" component={Signup}/>
-                    <Route path="/login" component={LoginForm}/>
+                    <Route path="/login" component={Login}/>
                 </Switch>
             </div>
         )
