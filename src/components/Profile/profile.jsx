@@ -33,6 +33,7 @@ const Profile = (props) => {
         let response = await axios.put(`http://localhost:5000/api/users/editProfile/${currentUserId}/`, editUser);
         if(response.status === 200){
             console.log(response.data);
+            alert("Profile changes successful!")
         }
     }
 

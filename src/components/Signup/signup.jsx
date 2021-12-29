@@ -24,21 +24,24 @@ function Signup(props) {
     }
 
     return(
-        <form className="signup" onSubmit={handleSubmit}>
-            <label>Name</label>
-            <input value={name} onChange={(event) => setName(event.target.value)} type="text" />
+        <div className="signUpBackground">
+            <form className="signup" onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input value={name} onChange={(event) => setName(event.target.value)} type="text" />
             
-            <label>Username</label>
-            <input value={userName} onChange={(event) => setUserName(event.target.value)} type="text" />
+                <label>Username</label>
+                <input value={userName} onChange={(event) => setUserName(event.target.value)} type="text" />
 
-            <label>Email</label>
-            <input value={email} onChange={(event) => setEmail(event.target.value)} type="text" />
+                <label>Email</label>
+                <input value={email} onChange={(event) => setEmail(event.target.value)} type="text" />
 
-            <label>Password</label>
-            <input value={password} onChange={(event) => setPassword(event.target.value)} type="text" />
+                <label>Password</label>
+                <input value={password} onChange={(event) => setPassword(event.target.value)} type="text" />
 
-            <button type="submit">Create User</button>
-        </form>
+                <button type="submit">Create User</button>
+            </form>
+            <img className="signUpImg" src="Images/signupImage.jpg" />
+        </div>
     )
 }
 

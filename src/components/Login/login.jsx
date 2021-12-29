@@ -30,9 +30,22 @@ function LoginForm(props){
             <div className="login">
                 <h1 className="headerFontColor">Greetings, Marine!  This is your portal for the Warhammer 40k community</h1>
                 <img className="loginImg" src="Images/Login.png" />
-                <div className="loginCover">
+                <div>
                     <div>
-                        <form className="headerFontColor" onSubmit={handleSubmit}>
+                        <p className="sideText">
+                            "They shall be my finest warriors, these men who give of themselves to me. Like clay I shall mold them, 
+                            and in the furnace of war forge them. They will be of iron will and steely muscle. In great armor shall 
+                            I clad them and with the mightiest guns will they be armed. They will be untouched by plague or disease, 
+                            no sickness will blight them. They will have tactics, strategies and machines so that no foe can best 
+                            them in battle. They are my bulwark against the Terror. They are the Defenders of Humanity. They are my 
+                            Space Marines and they shall know no fear."
+                        </p>
+                        <a className="sideTextFooter">
+                            -The Emperor of Mankind
+                        </a>
+                    </div>
+                    <div className="loginCover">
+                        <form className="loginText" onSubmit={handleSubmit}>
                             <label>UserName</label>
                             <input value={userName} onChange={(event) => getUserName(event.target.value)} type="text" />
 

@@ -10,6 +10,7 @@ import Profile from "./components/Profile/profile";
 import TradeHall from "./components/TradeHall/tradeHall";
 import ArmyForge from "./components/ArmyForge/armyForge";
 import ModelResearch from "./components/ModelResearch/modelResearch";
+import "./App.css";
 // import NavBar from "./components/NavBar/navBar";
 
 class App extends Component {

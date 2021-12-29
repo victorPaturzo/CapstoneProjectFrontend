@@ -1,0 +1,18 @@
+.tradehallBackgroundImg{
+    background-size: cover;
+    background-image: url("./TradehallBackground.jpg");
+}
+
+.tradehallMainFeed{
+    color: white;
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 50%;
+    height: 100%;
+}
+
+.tradehallHeader{
+    color: white;
+    margin-left: 45%;
+
+}

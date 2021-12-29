@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { Route, Link } from "react-router-dom";
 // import Button from "@mui/material/Button";
 import "./tradeHall.css";
@@ -6,34 +6,34 @@ import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
 
-function TradeHall(props){
+const TradeHall = (props) => {
     const [tradePosts, getTradePosts] = useState([]);
 
-    async function handleSubmit(e){
-        let response = await axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts);
-        if(response.status === 200){
-            console.log(response.data);
-        }
-        return tradePosts.setState(response.data)
-    }   
-
-   
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts)
+    //          .then((response) => {
+    //             getTradePosts(response.data);
+    //           })
+    //          .catch((err) => {
+    //             console.log(err);
+    //           })
+    // },  [tradePosts, props.index]);  
 
     return(
         <>
-        <div>
+        <div className="tradehallBackgroundImg">
             <NavBar />
-            <h1>TradeHall</h1>
-                <table>
+            <h1 className="tradehallHeader">TradeHall</h1>
+                <table className="tradehallMainFeed">
                     <thead>
                         <tr>
-                            <h1>What's New?</h1>
+                            <th className="tradehallHeader">Posted Offers</th>
                         </tr>
                      </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>{tradePosts[4]}</td>
+                            {tradePosts && <td>{tradePosts[4]}</td>} 
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -57,8 +57,6 @@ function TradeHall(props){
                         </tr>
                     </tbody>
                 </table>
-                <button onClick={() => handleSubmit}>See Trade Offers!</button>
-                
             </div>
         </>
     )
