@@ -3,6 +3,7 @@ import "./signup.css";
 import axios from "axios";
 
 function Signup(props) {
+    const [name, setName] = useState("");
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -10,7 +11,8 @@ function Signup(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         const postUser = {
-            name: userName,
+            name: name,
+            userName: userName,
             email: email,
             password: password,
             isAdmin: false
@@ -23,6 +25,9 @@ function Signup(props) {
 
     return(
         <form className="signup" onSubmit={handleSubmit}>
+            <label>Name</label>
+            <input value={name} onChange={(event) => setName(event.target.value)} type="text" />
+            
             <label>Username</label>
             <input value={userName} onChange={(event) => setUserName(event.target.value)} type="text" />
 
