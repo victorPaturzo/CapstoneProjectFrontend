@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Profile/profile.css";
 import "./home.css";
 import "../TradeHall/tradeHall";
@@ -9,7 +9,7 @@ import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+// const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const Home = (props) => {
     return (
@@ -40,19 +40,19 @@ const Home = (props) => {
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
+                            <td colSpan="2">Larry the Bird</td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
-                            <td colspan="2">Event</td>
+                            <td colSpan="2">Event</td>
                         </tr>
                         <tr>
                             <th scope="row">5</th>
-                            <td colspan="2">Event</td>
+                            <td colSpan="2">Event</td>
                         </tr>
                         <tr>
                             <th scope="row">6</th>
-                            <td colspan="2">Event</td>
+                            <td colSpan="2">Event</td>
                         </tr>
                     </tbody>
                 </table>

@@ -13,11 +13,12 @@
 
 .signup{
     background-color: #99d851;
+    flex-direction: row;
     border-radius: 36px;
     color: black;
     width: 50%;
     margin-left: 25%;
     padding-bottom: 4%;
     padding-top: 4%;
-    padding-left: 11%;
+    padding-left: 4%;
 }

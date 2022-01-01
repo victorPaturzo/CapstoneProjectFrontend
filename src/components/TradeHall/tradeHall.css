@@ -5,14 +5,32 @@
 
 .tradehallMainFeed{
     color: white;
-    margin-top: 10%;
-    margin-left: 30%;
-    width: 50%;
+    margin-top: 5%;
+    margin-left: 20%;
+    width: 60%;
     height: 100%;
 }
 
-.tradehallHeader{
-    color: white;
-    margin-left: 45%;
+.tableHeader{
+    color: rgb(251, 255, 4);
+    padding-left: 45%;
+    padding-bottom: 4%;
+}
 
+.mainFeedRows{
+    background: red;
+    border-radius: 50px;
+    padding-left: 3%;
+    padding-bottom: 1%;
+}
+
+.tradehallHeader{
+    color: rgb(251, 255, 4);
+    padding-top: 3%;
+    padding-left: 44%;
+
+}
+
+.trSpacer{
+    padding-bottom: 4%;
 }

@@ -6,58 +6,61 @@ import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
 
-const TradeHall = (props) => {
-    const [tradePosts, getTradePosts] = useState([]);
+const TradeHall = () => {
+    const [tradePosts, setTradePosts] = useState([]);
+    
+    async function getData(e) {
 
-    // useEffect(() => {
-    //     axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts)
-    //          .then((response) => {
-    //             getTradePosts(response.data);
-    //           })
-    //          .catch((err) => {
-    //             console.log(err);
-    //           })
-    // },  [tradePosts, props.index]);  
+        let response = await axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts);
+        if(response.status === 200){
+            console.log(response.data);
+            setTradePosts(response.data);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+        },  []);  
+
+    const MainFeed = (props) => {
+        return (
+            <table className="tradehallMainFeed">
+                <thead >
+                    <tr >
+                        <th className="tableHeader">Posted Offers</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[4].offer}</td>  */}
+                    </tr>
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[3].offer}</td> */}
+                    </tr>
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[2].offer}</td> */}
+                    </tr>
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[1].offer}</td> */}
+                    </tr>
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[0].offer}</td> */}
+                    </tr>
+                    <tr className="trSpacer">
+                        {/* <td className="mainFeedRows" colSpan="2">Event</td> */}
+                    </tr>
+                </tbody>
+            </table>
+        )
+    }
 
     return(
         <>
         <div className="tradehallBackgroundImg">
             <NavBar />
             <h1 className="tradehallHeader">TradeHall</h1>
-                <table className="tradehallMainFeed">
-                    <thead>
-                        <tr>
-                            <th className="tradehallHeader">Posted Offers</th>
-                        </tr>
-                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            {tradePosts && <td>{tradePosts[4]}</td>} 
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td colspan="2">Event</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td colspan="2">Event</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td colspan="2">Event</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <MainFeed />
+        </div>
         </>
     )
 }

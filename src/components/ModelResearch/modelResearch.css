@@ -1,4 +1,9 @@
-.homeLink{
-    position: relative;
-    top: 300px;
+.modelResearchBackground{
+    background-size: cover;
+    background-image: url("./ModelResearchBackground.jpg");
+}
+
+.header{
+    color: white;
+    padding-right: 25%;
 }
