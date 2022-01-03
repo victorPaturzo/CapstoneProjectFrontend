@@ -11,7 +11,7 @@ import TradeHall from "./components/TradeHall/tradeHall";
 import ArmyForge from "./components/ArmyForge/armyForge";
 import ModelResearch from "./components/ModelResearch/modelResearch";
 import "./App.css";
-// import NavBar from "./components/NavBar/navBar";
+import "bootstrap";
 
 class App extends Component {
     constructor(props){

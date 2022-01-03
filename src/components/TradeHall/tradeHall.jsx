@@ -5,22 +5,20 @@ import "./tradeHall.css";
 import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
+import { PostAddSharp } from "@mui/icons-material";
 
 const TradeHall = () => {
     const [tradePosts, setTradePosts] = useState([]);
     
-    async function getData(e) {
-
-        let response = await axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts);
-        if(response.status === 200){
-            console.log(response.data);
-            setTradePosts(response.data);
-        }
-    }
-
     useEffect(() => {
-        getData();
-        },  []);  
+        axios.get(`http://localhost:5000/api/trades/getAllOffers`, tradePosts)
+             .then(res => {
+                 setTradePosts(res.data)
+             })
+             .catch(err => {
+                 console.log(err)
+             })
+    })
 
     const MainFeed = (props) => {
         return (
@@ -30,12 +28,25 @@ const TradeHall = () => {
                         <th className="tableHeader">Posted Offers</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <tr className="trSpacer">
-                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[4].offer}</td>  */}
+                        <td colSpan="1">
+                            {
+                            tradePosts.map(post => <li key={post.id}>{post.owner}</li>)
+                            }
+                        </td> 
+                        <td colSpan="2">
+                            {
+                            tradePosts.map(post => <li key={post.id}>{post.offer}</li>)
+                            }
+                        </td> 
                     </tr>
                     <tr className="trSpacer">
-                        {/* <td className="mainFeedRows" colSpan="2">{tradePosts[3].offer}</td> */}
+                        <td className="mainFeedRows" colSpan="2">
+                            {
+                                
+                            }
+                        </td>
                     </tr>
                     <tr className="trSpacer">
                         {/* <td className="mainFeedRows" colSpan="2">{tradePosts[2].offer}</td> */}

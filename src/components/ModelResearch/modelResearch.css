@@ -3,7 +3,54 @@
     background-image: url("./ModelResearchBackground.jpg");
 }
 
-.header{
+.modelResearchHeader{
     color: white;
-    padding-right: 25%;
+    padding-right: 35%;
+    padding-left: 42%;
+}
+
+.ModelsFeed{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.modelsAFeed{
+    background-color: whitesmoke;
+    margin-left: 10%;
+    padding-left: 12%;
+    padding-right: 3%;
+    width: 30%;
+    border: medium solid rgb(70, 69, 69);
+}
+
+.modelsBFeed{
+    background-color: whitesmoke;
+    margin-left: 20%;
+    padding-left: 12%;
+    width: 30%;
+    border: medium solid rgb(70, 69, 69);
+}
+
+.trStyle{
+    color: black;
+    background-color: whitesmoke;
+    border: medium solid black;
+}
+
+.searchBars{
+    display:flex;
+    flex-direction: column;
+}
+
+.searchBarA{
+    width: 100%;
+    height: 5%;
+    margin-left: 15%;
+}
+
+.searchBarB{
+    width: 20%;
+    height: 5%;
+    margin-left: 65%;
 }

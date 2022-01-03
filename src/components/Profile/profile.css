@@ -35,3 +35,17 @@
 .profilePageHeader{
     margin-left: 44%;
 }
+
+.messagesPosition{
+    background-color: gray;
+    color: white;
+    margin-left: 30%;
+    margin-top: 20%;
+}
+
+.friendsPosition{
+    background-color:gray;
+    color: white;
+    margin-left: 5%;
+    margin-top: 20%;
+}
