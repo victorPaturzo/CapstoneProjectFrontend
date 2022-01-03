@@ -49,3 +49,8 @@
     margin-left: 5%;
     margin-top: 20%;
 }
+
+.friendsTableBody{
+    background-color: white;
+    color: black;
+}

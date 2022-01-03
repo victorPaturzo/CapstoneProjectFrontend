@@ -63,16 +63,16 @@ const Profile = (props) => {
 
     const [friends, setFriends] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get(`http://localhost:5000/api/users/${currentUserId}`, friends)
-    //     .then(res => {
-    //         setFriends(res.data.acceptedFriends);
-    //         console.log(friends);
-    //     })
-    //     .catch(err => {
-    //         console.log(err)
-    //     })
-    // })
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/users/getFriends/${currentUserId}`, friends)
+        .then(res => {
+            setFriends(res.data);
+            console.log(friends);
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    })
 
     const Messages = (props) => {
         return(
@@ -84,12 +84,12 @@ const Profile = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td colSpan="1">
+                        <td className="friendsTableBody" colSpan="1">
                             {
                             messages.map(message => <li key={message._id}>{message.userName}</li>)
                             }
                         </td>
-                        <td colSpan="2">
+                        <td className="friendsTableBody" colSpan="2">
                             {
                             messages.map(message => <li key={message._id}>{message.text}</li>)
                             }
@@ -100,6 +100,16 @@ const Profile = (props) => {
         )
     }
 
+    // const SendMessages = (props) => {
+    //     return(
+    //         <form onSubmit={handleSubmit}>
+    //             <div>
+    //                 <
+    //             </div>
+    //         </form>
+    //     )
+    // }
+
     const Friends = (props) => {
         return(
             <table className="friendsPosition">
@@ -109,11 +119,9 @@ const Profile = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr className="friendsTableBody">
                         <td colSpan="1">
-                            {/* {
-                                friends.map(friend => <li key={friend._id}>{friend.userName}</li>)
-                            } */}
+                            {friends}
                         </td>
                     </tr>
                 </tbody>
