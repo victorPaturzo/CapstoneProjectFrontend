@@ -1,15 +1,14 @@
 .logoutButton{
-    width: 80px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     border-radius: 30px;
     background-color: grey;
     margin-left: 8%;
-    margin-top: 1%;
 }
 
 .buttonProperties{
     font-size: medium;
-    margin-left: 8%;
+    margin-left: 5%;
     color: rgb(39, 39, 44);
 }
 

@@ -4,17 +4,22 @@ import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
 import "bootstrap";
+import ModelAFeed from "./modelA";
+import ModelBFeed from "./modelB"
 
 const ModelResearch = (props) => {
 
     const [allModels, setAllModels] = useState([]);
-    const [modelA, setModelA] = useState("");
-    const [modelB, setModelB] = useState("");
+    const [modelA, setModelA] = useState(null);
+    const [modelB, setModelB] = useState(null);
+    const [modelAResult, setModelAResult] = useState(null);
+    const [modelBResult, setModelBResult] = useState(null);
+
     useEffect((e) => {
 
         axios.get(`http://localhost:5000/api/models/getAllModels`, allModels)
              .then(res => {
-                 setAllModels(res.data)
+                 setAllModels(res.data);
              })
              .catch(err => {
                  console.log(err)
@@ -24,25 +29,17 @@ const ModelResearch = (props) => {
     async function handleSubmitA(e) {
         e.preventDefault();
 
-        const getModel = {
-            modelA: modelA
-        };
-        let response = await axios.get(`http://localhost:5000/api/models/getModelByName/${modelA}`, getModel);
-        if(response.status === 200){
-            console.log(response.data);
-        }
+        let response = await axios.get(`http://localhost:5000/api/models/getModelByName/${modelA}`);
+        console.log(response.data);
+        setModelAResult(response.data);
     }
 
     async function handleSubmitB(e) {
         e.preventDefault();
 
-        const getModel = {
-            modelB: modelB
-        };
-        let response = await axios.get(`http://localhost:5000/api/models/getModelByName/${modelB}`, getModel);
-        if(response.status === 200){
-            console.log(response.data);
-        }
+        let response = await axios.get(`http://localhost:5000/api/models/getModelByName/${modelB}`, modelBResult);
+        console.log(response.data);
+        setModelBResult(response.data);
     }
 
     const handleChangeA = (event) => {
@@ -56,80 +53,6 @@ const ModelResearch = (props) => {
             [event.target.name]: event.target.value
         });
     }
-
-    const ModelAFeed = (props) => {
-        return (
-            <table >
-                <thead className="trStyle">
-                    <tr >
-                        <th >Model A</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr className="trStyle">
-                        <td  colSpan="1">
-                            {/* {
-                            modelA.map(post => <li key={post.id}>{post.powerLevel}</li>)
-                            } */}
-                        </td> 
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
-
-    const ModelBFeed = (props) => {
-        return (
-            <table >
-                <thead >
-                    <tr className="trStyle">
-                        <th >Model B</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr className="trStyle">
-                        <td  colSpan="1">Event</td> 
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                    <tr className="trStyle">
-                        <td colSpan="1">Event</td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
-
-    // const ModelImageA = (props) => {
-    //     return(
-    //         <img
-    //     )
-    // }
 
     return(
         <>
@@ -150,7 +73,7 @@ const ModelResearch = (props) => {
                         <div className="searchBarB">
                             <div>
                                 <label>Model Name</label>
-                                <input value={modelB} onChange={handleChangeB} onChange={(event) => setModelB(event.target.value)} type="text" />
+                                <input name="modelB" onChange={handleChangeB} value={modelB} onChange={(event) => setModelB(event.target.value)} type="text" />
                                 <button type="submit">Search</button>
                             </div>
                         </div>
@@ -158,12 +81,13 @@ const ModelResearch = (props) => {
                 </div>
                 <div className="ModelsFeed">
                     <div className="modelsAFeed">
-                        <ModelAFeed />
+                        {modelAResult && <ModelAFeed model={modelAResult}/>}
                     </div>
                     <div className="modelsBFeed">
-                        <ModelBFeed />
+                        {modelBResult && <ModelBFeed model={modelBResult}/>}
                     </div>
                 </div>
+                <h6 className="footer">Footer</h6>
             </div>
         </>
     )

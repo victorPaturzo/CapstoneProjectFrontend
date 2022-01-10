@@ -1,0 +1,27 @@
+.messengerBackground{
+    background-size: cover;
+    background-image: url("./messengerBackground.jpg");
+}
+
+.messagesPosition{
+    background-color: rgb(66, 7, 202);
+    color: white;
+    margin-left: 45%;
+    margin-top: 10%;
+    border-radius: 16px;
+    
+}
+
+.messages{
+    border-radius: 16px;
+}
+
+.messageInputPosition{
+    padding-top: 21%;
+    margin-left: 25%;
+}
+
+.friendsTableBody{
+    background-color: white;
+    color: black;
+}

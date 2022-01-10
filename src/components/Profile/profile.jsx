@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import { Route, Link } from "react-router-dom";
-// import Button from "@mui/material/Button";
 import "./profile.css";
 import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
 import jwtDecode from "jwt-decode";
+import Friends from "../Friends/friends";
 
 const Profile = (props) => {
     const [name, getName] = useState("");
@@ -32,22 +31,9 @@ const Profile = (props) => {
         };
         let response = await axios.put(`http://localhost:5000/api/users/editProfile/${currentUserId}/`, editUser);
         if(response.status === 200){
-            console.log(response.data);
             alert("Profile changes successful!")
         }
     }
-
-    const [messages, setMessages] = useState([]);
-
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/users/${currentUserId}`, messages)
-        .then(res => {
-            setMessages(res.data.inbox);
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    })
 
     const [user, setUser] = useState([]);
 
@@ -61,74 +47,6 @@ const Profile = (props) => {
         })
     })
 
-    const [friends, setFriends] = useState([]);
-
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/users/getFriends/${currentUserId}`, friends)
-        .then(res => {
-            setFriends(res.data);
-            console.log(friends);
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    })
-
-    const Messages = (props) => {
-        return(
-            <table className="messagesPosition">
-                <thead>
-                    <tr>
-                        <th>Your Messages</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="friendsTableBody" colSpan="1">
-                            {
-                            messages.map(message => <li key={message._id}>{message.userName}</li>)
-                            }
-                        </td>
-                        <td className="friendsTableBody" colSpan="2">
-                            {
-                            messages.map(message => <li key={message._id}>{message.text}</li>)
-                            }
-                       </td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
-
-    // const SendMessages = (props) => {
-    //     return(
-    //         <form onSubmit={handleSubmit}>
-    //             <div>
-    //                 <
-    //             </div>
-    //         </form>
-    //     )
-    // }
-
-    const Friends = (props) => {
-        return(
-            <table className="friendsPosition">
-                <thead>
-                    <tr>
-                        <th>Friends</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="friendsTableBody">
-                        <td colSpan="1">
-                            {friends}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
-
     return(
         <div className="profileBackground">
             <NavBar />
@@ -136,7 +54,6 @@ const Profile = (props) => {
             <div classname="profileFeed">
                 <img className="userAvatar" />
                 <Friends />
-                <Messages />
                 <form className="editProfile" onSubmit={handleSubmit}>
                     <label>Name</label>
                     <input onChange={(event) => getName(event.target.value)} type="text" />

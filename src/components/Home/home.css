@@ -26,7 +26,18 @@
 }
 
 .header{
-    margin-left: 50%;
+   text-align: center;
+}
+
+.eventPosition{
+    background-color: gray;
+    border: solid black;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.tableRows{
+    line-height: 14px;
 }
 
 .onlineSwitch{

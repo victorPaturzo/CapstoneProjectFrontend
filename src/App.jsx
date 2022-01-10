@@ -10,6 +10,7 @@ import Profile from "./components/Profile/profile";
 import TradeHall from "./components/TradeHall/tradeHall";
 import ArmyForge from "./components/ArmyForge/armyForge";
 import ModelResearch from "./components/ModelResearch/modelResearch";
+import Messenger from "./components/Messenger/messenger";
 import "./App.css";
 import "bootstrap";
 
@@ -57,6 +58,7 @@ class App extends Component {
                     <Route exact path="/tradeHall" component={TradeHall} />
                     <Route exact path="/armyForge" component={ArmyForge} />
                     <Route exact path="/modelResearch" component={ModelResearch} />
+                    <Route exact path="/messenger" component={Messenger} />
                 </Switch>
             </div>
         )

@@ -33,24 +33,32 @@
 }
 
 .profilePageHeader{
-    margin-left: 44%;
+    margin-left: 42%;
 }
 
 .messagesPosition{
     background-color: gray;
     color: white;
     margin-left: 30%;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .friendsPosition{
     background-color:gray;
     color: white;
     margin-left: 5%;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .friendsTableBody{
     background-color: white;
     color: black;
+}
+
+.messageInputPosition{
+    right: 40%;
+}
+
+.messenger{
+    margin-top: 10%;
 }

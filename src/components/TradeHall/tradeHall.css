@@ -5,10 +5,12 @@
 
 .tradehallMainFeed{
     color: white;
-    margin-top: 5%;
+    padding-top: 5%;
     margin-left: 15%;
+    border-radius: 50%;
     width: 70%;
     height: 100%;
+    
 }
 
 .tableHeader{
@@ -28,9 +30,9 @@
     background: red;
     padding-left: 3%;
     padding-bottom: 4%;
-    
 }
 
-.column{
-
+.tradeHallFooter{
+    padding-top: 23%;
 }
+

@@ -18,7 +18,7 @@
 .modelsAFeed{
     background-color: whitesmoke;
     margin-left: 10%;
-    padding-left: 12%;
+    padding-left: 0%;
     padding-right: 3%;
     width: 30%;
     border: medium solid rgb(70, 69, 69);
@@ -27,7 +27,7 @@
 .modelsBFeed{
     background-color: whitesmoke;
     margin-left: 20%;
-    padding-left: 12%;
+    padding-left: 0%;
     width: 30%;
     border: medium solid rgb(70, 69, 69);
 }
@@ -53,4 +53,16 @@
     width: 20%;
     height: 5%;
     margin-left: 65%;
+}
+
+.columnOne{
+    border: solid black thick;
+    text-align: left;
+}
+.columnTwo{
+    background-color: rgb(238, 158, 158);
+}
+
+.footer{
+    padding-top: 0%;
 }

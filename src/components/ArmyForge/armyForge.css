@@ -1,4 +1,32 @@
-.homeLink{
-    position: relative;
-    top: 300px;
+.forgeBackground{
+    background-size: cover;
+    background-image: url("./forgeBackground.jpg");
+}
+
+.armyListPosition{
+    margin-top: 20%;
+    margin-left: 40%;
+}
+
+.armiesHeaderRow{
+    border: 3mm ridge gold ;
+    border-radius: 20px;
+    font-family:'Times New Roman', Times, serif
+}
+
+.armiesHeader{
+    background-color: rgb(228, 226, 226);
+    color: rgb(26, 23, 24);
+    text-align: center;
+    font-size: x-large;
+}
+
+.armiesBody{
+    background-color: white;
+    color: rgb(19, 18, 18);
+    font-family:'Times New Roman', Times, serif;
+}
+
+.footer{
+    margin-top: 40%;
 }

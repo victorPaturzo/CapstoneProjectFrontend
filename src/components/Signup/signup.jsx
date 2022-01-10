@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./signup.css";
 import axios from "axios";
+import { ChatEngineWrapper, Socket } from 'react-chat-engine';
 
 function Signup(props) {
     const [name, setName] = useState("");
@@ -14,13 +15,34 @@ function Signup(props) {
             name: name,
             userName: userName,
             email: email,
-            password: password,
-            isAdmin: false
+            password: password
         };
         let response = await axios.post(`http://localhost:5000/api/users/register`, postUser);
         if(response.status === 200){
             window.location = "/login"
         }
+        const chatUser = {
+            username: userName,
+            secret: password,
+        }
+        let config = {
+            method: 'post',
+            url: 'https://api.chatengine.io/users/',
+            headers: {
+                'PRIVATE-KEY': '{{4a4967dd-1938-46ad-a8ef-09de89c6f421}}'
+            },
+            data: chatUser
+        };
+
+        axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        })
+
     }
 
     return(
