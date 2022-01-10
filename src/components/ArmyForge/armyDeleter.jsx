@@ -33,7 +33,7 @@ const ArmyDeleter = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>List Army to Delete Here</label>
-                <input name="text" onChange={handleChange} onChange={(event) => setArmy(event.target.value)} type="text"></input>
+                <input name="army" onChange={handleChange} value={army} onChange={(event) => setArmy(event.target.value)} type="text"></input>
                 <button type="submit">Delete Army</button>
             </form>
         </div>

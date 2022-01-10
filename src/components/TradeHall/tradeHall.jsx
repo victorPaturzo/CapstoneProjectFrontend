@@ -3,6 +3,7 @@ import "./tradeHall.css";
 import "../Home/home";
 import axios from "axios";
 import NavBar from "../NavBar/navBar";
+import OfferPoster from "./offerPoster";
 
 const TradeHall = () => {
     const [tradePosts, setTradePosts] = useState([]);
@@ -31,11 +32,6 @@ const TradeHall = () => {
                         tradePosts.map(post => <tr className="trSpacer"><td key={post.id}>{post.owner}------{post.offer}</td></tr>)
                     }
                     </tr>
-                    {/* <tr>
-                    {
-                        tradePosts.map(post => <tr className="trSpacer"><td key={post.id}>{post.offer}</td></tr>)
-                    }
-                    </tr> */}
                 </tbody>
             </table>
         )
@@ -47,6 +43,7 @@ const TradeHall = () => {
             <NavBar />
             <h1 className="tradehallHeader">TradeHall</h1>
             <MainFeed />
+            <OfferPoster />
             <h6 className="tradeHallFooter">Footer</h6>
         </div>
         </>

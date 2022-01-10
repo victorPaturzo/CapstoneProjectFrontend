@@ -48,6 +48,8 @@ const [events, setEvents] = useState([]);
                         }
                     </tbody>
                 </table>
+                <div><h6 className="footer">footer</h6></div>
+                
             </div>
             
         </>

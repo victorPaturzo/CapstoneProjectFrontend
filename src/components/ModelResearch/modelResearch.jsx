@@ -6,6 +6,7 @@ import NavBar from "../NavBar/navBar";
 import "bootstrap";
 import ModelAFeed from "./modelA";
 import ModelBFeed from "./modelB"
+import CommentBar from "./commentBar";
 
 const ModelResearch = (props) => {
 
@@ -86,6 +87,9 @@ const ModelResearch = (props) => {
                     <div className="modelsBFeed">
                         {modelBResult && <ModelBFeed model={modelBResult}/>}
                     </div>
+                </div>
+                <div className="commentBar">
+                    {modelAResult && <CommentBar model={modelAResult}/>}
                 </div>
                 <h6 className="footer">Footer</h6>
             </div>
