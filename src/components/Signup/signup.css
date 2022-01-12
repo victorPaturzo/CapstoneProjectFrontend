@@ -16,9 +16,15 @@
     flex-direction: row;
     border-radius: 36px;
     color: black;
-    width: 50%;
-    margin-left: 25%;
+    width: 40%;
+    margin-left: 30%;
     padding-bottom: 4%;
     padding-top: 4%;
     padding-left: 4%;
+    text-align: end;
+}
+
+.signupRows{
+    padding-right: 43%;
+    padding-bottom: 1%;
 }

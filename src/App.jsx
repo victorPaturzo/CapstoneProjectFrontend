@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-
 import {Switch, Route, Redirect} from "react-router-dom";
 import jwtDecode from "jwt-decode";
-// import Logout from "./components/Logout/logout";
 import Login from "./components/Login/login";
 import Signup from "./components/Signup/signup";
 import Home from "./components/Home/home";
@@ -31,7 +29,6 @@ class App extends Component {
     }
 
     componentDidMount(){
-        ///JWT may be set other than null
         const jwt = localStorage.getItem("token");
         try {
             const decodedUser = jwtDecode(jwt);

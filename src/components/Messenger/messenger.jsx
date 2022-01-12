@@ -4,7 +4,6 @@ import axios from "axios";
 import "../Messenger/messenger.css";
 import jwtDecode from "jwt-decode";
 import NavBar from "../NavBar/navBar";
-import Friends from "../Friends/friends";
 import DirectChatPage from "./chatEngine";
 
 const Messenger = (props) => {
@@ -32,8 +31,6 @@ const Messenger = (props) => {
             console.log(err)
         })
     })
-
-    const [sendMessage, setSendMessage] = useState([]);
 
     async function handleSubmit(e) {
         e.preventDefault();

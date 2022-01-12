@@ -3,8 +3,6 @@ import "./modelResearch.css";
 import "../Home/home";
 import axios from "axios";
 import "bootstrap";
-import ModelAFeed from "./modelA";
-import ModelBFeed from "./modelB"
 import jwtDecode from "jwt-decode";
 
 const CommentBar = (props) => {

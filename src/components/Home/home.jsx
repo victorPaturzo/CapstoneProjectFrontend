@@ -8,15 +8,10 @@ import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import axios from "axios";
-import jwtDecode from "jwt-decode";
-import Armies from "../ArmyForge/armyForge";
 
 const Home = (props) => {
 
-    const currentUser = localStorage.getItem("token");
-    const decodedUser = jwtDecode(currentUser);
-
-const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/trades/getEvents`, events)

@@ -35,11 +35,6 @@ const ArmyForge = (props) => {
                 </thead>
                 <tbody>
                     <tr className="armiesBody">
-                        {/* <td colSpan="1">
-                            {
-                                userArmies.map(army => <li key={army._id}>{army._id}</li>)
-                            }
-                        </td> */}
                         <td colSpan="2">
                             {
                                 userArmies.map(army => <li key={army._id}>{army.army}</li>)

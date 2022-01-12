@@ -50,7 +50,7 @@ function LoginForm(props){
                             <input value={userName} onChange={(event) => getUserName(event.target.value)} type="text" />
 
                             <label>Password</label>
-                            <input value={password} onChange={(event) => getPassword(event.target.value)} type="text" />
+                            <input value={password} onChange={(event) => getPassword(event.target.value)} type="password" />
 
                             <button className="buttonColor" href="/profile" type="submit">ENTER THE FRAY</button>
                             <Button className="buttonColor" href="/signup" variant="text">Join the cause here!</Button>

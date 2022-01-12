@@ -1,13 +1,17 @@
 import React, {useState} from "react";
 import "./signup.css";
 import axios from "axios";
-import { ChatEngineWrapper, Socket } from 'react-chat-engine';
 
 function Signup(props) {
     const [name, setName] = useState("");
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    async function back(e) {
+        e.preventDefault();
+        window.location = "/login"
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -19,6 +23,7 @@ function Signup(props) {
         };
         let response = await axios.post(`http://localhost:5000/api/users/register`, postUser);
         if(response.status === 200){
+            alert("User successfully created!");
             window.location = "/login"
         }
         const chatUser = {
@@ -48,19 +53,28 @@ function Signup(props) {
     return(
         <div className="signUpBackground">
             <form className="signup" onSubmit={handleSubmit}>
+                <div className="signupRows">
                 <label>Name</label>
                 <input value={name} onChange={(event) => setName(event.target.value)} type="text" />
-            
+                </div>
+                <div className="signupRows">
                 <label>Username</label>
                 <input value={userName} onChange={(event) => setUserName(event.target.value)} type="text" />
-
+                </div>
+                <div className="signupRows">
                 <label>Email</label>
                 <input value={email} onChange={(event) => setEmail(event.target.value)} type="text" />
-
+                </div>
+                <div className="signupRows">
                 <label>Password</label>
-                <input value={password} onChange={(event) => setPassword(event.target.value)} type="text" />
-
+                <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" />
+                </div>
+                <div className="signupRows">
                 <button type="submit">Create User</button>
+                </div>
+            </form>
+            <form onSubmit={back}>
+            <button type="submit">Back to Login Screen</button>
             </form>
             <img className="signUpImg" src="Images/signupImage.jpg" />
         </div>

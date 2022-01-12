@@ -11,9 +11,14 @@ const Friends = (props) => {
     const currentUserId = decodedUser._id;
     
     const [friends, setFriends] = useState([]);
+    const [pendingFriends, setPendingFriends] = useState([]);
 
         useEffect(() => {
             doThing()
+        }, [])
+
+        useEffect(() => {
+            getPendingFriends()
         }, [])
 
         const doThing = async()=>{
@@ -25,15 +30,24 @@ const Friends = (props) => {
             let friendsList = [];
             allResult.forEach((el)=> friendsList.push(el.data))
             console.log(friendsList)
-            setFriends(friendsList)
-           
-                     //promises.push(axios.get(`http://localhost:5000/api/users/${el}`))
-              
-           
+            setFriends(friendsList)  
+        }
+
+        const getPendingFriends = async()=>{
+            let response = await axios.get(`http://localhost:5000/api/users/getPendingFriends/${currentUserId}`)
+            console.log("Friend Ids", response.data)
+            let allResult = await Promise.all(response.data.map((el)=>
+                axios.get(`http://localhost:5000/api/users/${el}`)
+            ))
+            let friendsList = [];
+            allResult.forEach((el)=> friendsList.push(el.data))
+            console.log(friendsList)
+            setPendingFriends(friendsList)  
         }
 
         const Friends = () => {
             return(
+                <div>
                 <table className="friendsPosition">
                     <thead>
                         <tr>
@@ -51,6 +65,24 @@ const Friends = (props) => {
                        
                     </tbody>
                 </table>
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Pending Friend Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {pendingFriends.map((el)=>{
+                            return <tr className="friendsTableBody">
+                                <td colSpan="1">
+                                    {el.userName}
+                                </td>
+                            </tr>
+                        })}
+                       
+                    </tbody>
+                </table>
+                </div>
             )
         }
     
