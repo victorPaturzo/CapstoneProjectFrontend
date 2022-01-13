@@ -20,20 +20,20 @@ const TradeHall = () => {
 
     const MainFeed = (props) => {
         return (
+            <div>
             <table className="tradehallMainFeed">
                 <thead >
                     <tr >
                         <th className="tableHeader">Posted Offers</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody >
                     {
                         tradePosts.map(post => <tr className="trSpacer"><td key={post.id}>{post.owner}------{post.offer}</td></tr>)
                     }
-                    </tr>
                 </tbody>
             </table>
+            </div>
         )
     }
 

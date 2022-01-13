@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./tradeHall.css";
 import "../Home/home";
 import axios from "axios";
@@ -32,12 +32,12 @@ const OfferPoster = (props) => {
 
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="postOfferForm" onSubmit={handleSubmit}>
             <div>
                 <div>
                     <label>Make Offer Post</label>
                     <input name="offer" onChange={handleChange} value={offer} onChange={(event) => setOffer(event.target.value)} type="text" />
-                    <button type="submit">Submit</button>
+                    <button className="buttonColor" type="submit">Submit</button>
                 </div>
             </div>
         </form>

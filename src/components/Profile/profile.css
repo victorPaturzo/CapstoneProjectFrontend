@@ -17,6 +17,16 @@
     border: 3px solid rgb(14, 13, 13);
 }
 
+.editProfileDiv{
+    background-color: rgb(105, 29, 19);
+    border-radius: 24px;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    text-align: end;
+    padding-right: 10%;
+}
+
 .editProfile{
     margin-top: 40%;
     color: white;
@@ -43,10 +53,17 @@
     margin-top: 10%;
 }
 
+.friendsDisplay{
+    background-color: rgb(57, 112, 60);
+    width: 25%;
+    border-radius: 24px;
+    margin-left: 70%;
+}
+
 .friendsPosition{
     background-color:gray;
     color: white;
-    margin-left: 5%;
+    margin-left: 8%;
     margin-top: 5%;
 }
 
@@ -55,10 +72,16 @@
     color: black;
 }
 
+.pendingFriendsTableBody{
+    background-color: white;
+    color: black;
+    margin-left: 3%;
+}
+
 .messageInputPosition{
     right: 40%;
 }
 
-.messenger{
+.footer{
     margin-top: 10%;
 }

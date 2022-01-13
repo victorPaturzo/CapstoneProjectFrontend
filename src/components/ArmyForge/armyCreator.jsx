@@ -31,7 +31,7 @@ const ArmyCreator = (props) => {
     }
 
     return(
-        <div>
+        <div className="armyCreator">
             <form onSubmit={handleSubmit}>
                 <label>List Army Here</label>
                 <input name="army" onChange={handleChange} onChange={(event) => setArmy(event.target.value)} type="text"></input>

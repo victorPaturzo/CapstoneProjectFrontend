@@ -30,7 +30,7 @@ const ArmyDeleter = (props) => {
     }
 
     return(
-        <div>
+        <div className="armyDeleter">
             <form onSubmit={handleSubmit}>
                 <label>List Army to Delete Here</label>
                 <input name="army" onChange={handleChange} value={army} onChange={(event) => setArmy(event.target.value)} type="text"></input>

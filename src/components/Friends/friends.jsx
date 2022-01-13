@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Home/home";
 import axios from "axios";
-import NavBar from "../NavBar/navBar";
 import jwtDecode from "jwt-decode";
 
 const Friends = (props) => {
@@ -47,7 +46,7 @@ const Friends = (props) => {
 
         const Friends = () => {
             return(
-                <div>
+                <div className="friendsDisplay">
                 <table className="friendsPosition">
                     <thead>
                         <tr>
@@ -71,9 +70,9 @@ const Friends = (props) => {
                             <th>Pending Friend Requests</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {pendingFriends.map((el)=>{
-                            return <tr className="friendsTableBody">
+                            return <tr className="pendingFriendsTableBody">
                                 <td colSpan="1">
                                     {el.userName}
                                 </td>

@@ -53,28 +53,41 @@ const Profile = (props) => {
             <h1 className="profilePageHeader">Your Profile Page</h1>
             <div classname="profileFeed">
                 <img className="userAvatar" />
+                <span className="friendsDisplay">
                 <Friends />
-                <form className="editProfile" onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input onChange={(event) => getName(event.target.value)} type="text" />
-
-                    <label>Username</label>
-                    <input onChange={(event) => getUserName(event.target.value)} type="text" />
-
-                    <label>Password</label>
-                    <input onChange={(event) => getPassword(event.target.value)} type="text" />
-
-                    <label>Email</label>
-                    <input onChange={(event) => getEmail(event.target.value)} type="text" />
-
-                    <label>Mailing Address</label>
-                    <input onChange={(event) => getMailingAddress(event.target.value)} type="text" />
-
-                    <label>Contact Information (phone number)</label>
-                    <input onChange={(event) => getContactInfo(event.target.value)} type="text" />
-
-                    <button href="/profile" type="submit">Edit Profile</button>
-                </form>
+                </span>
+                <div className="editProfileDiv">
+                    <form className="editProfile" onSubmit={handleSubmit}>
+                        <div>
+                            <label>Name</label>
+                            <input onChange={(event) => getName(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <label>Username</label>
+                            <input onChange={(event) => getUserName(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input onChange={(event) => getPassword(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input onChange={(event) => getEmail(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <label>Mailing Address</label>
+                            <input onChange={(event) => getMailingAddress(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <label>Contact Info</label>
+                            <input onChange={(event) => getContactInfo(event.target.value)} type="text" />
+                        </div>
+                        <div>
+                            <button href="/profile" type="submit">Edit Profile</button>
+                        </div>
+                    </form>
+                </div>
+                <h6 className="footer">footer</h6>
             </div>
         </div>
     )

@@ -4,8 +4,9 @@
 }
 
 .armyListPosition{
-    margin-top: 20%;
+    margin-top: 0%;
     margin-left: 40%;
+    font-size: xx-large;
 }
 
 .armiesHeaderRow{
@@ -25,6 +26,22 @@
     background-color: white;
     color: rgb(19, 18, 18);
     font-family:'Times New Roman', Times, serif;
+}
+
+.armyCreator{
+    background-color: rgb(194, 162, 81);
+    width: 15%;
+    border: 3mm ridge silver;
+    margin-top: 8%;
+    margin-left: 20%;
+}
+
+.armyDeleter{
+    background-color: rgb(194, 162, 81);
+    width: 15%;
+    border: 3mm ridge silver;
+    margin-top: 1%;
+    margin-left: 20%;
 }
 
 .footer{
